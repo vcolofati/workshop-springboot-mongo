@@ -15,7 +15,7 @@ public class Post implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private String id;
+	private String id = null;
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
@@ -26,8 +26,7 @@ public class Post implements Serializable{
 	public Post() {	
 	}
 
-	public Post(String id, Instant moment, String title, String body, AuthorDTO author) {
-		this.id = id;
+	public Post(Instant moment, String title, String body, AuthorDTO author) {
 		this.moment = moment;
 		this.title = title;
 		this.body = body;
@@ -36,10 +35,6 @@ public class Post implements Serializable{
 
 	public String getId() {
 		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public Instant getMoment() {

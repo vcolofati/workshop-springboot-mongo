@@ -22,7 +22,6 @@ import com.example.victor.workshopmongo.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
-
 public class UserResource {
 	
 	@Autowired
